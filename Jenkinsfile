@@ -9,7 +9,7 @@ pipeline {
         stage('Deploy with Ansible') {
             steps {
                  sshagent(['private-key']) {
-                 ssh ubuntu@172.31.39.67 ansible-playbook -i inventory playbook.yml
+                 "ssh ubuntu@172.31.39.67 ansible-playbook -i inventory playbook.yml"
 
       
                  }            

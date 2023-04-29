@@ -8,9 +8,11 @@ pipeline {
         }
         stage('Deploy with Ansible') {
             steps {
-                 sh "pwd"
-                 sh "ls"
-                 sh "ansible-playbook -i inventory playbook.yml"
+                 sshagent(['private-key']) {
+                 ssh ubuntu@172.31.39.67 ansible-playbook -i inventory playbook.yml
+
+      
+                 }            
             }
         }
     }

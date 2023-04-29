@@ -9,7 +9,8 @@ pipeline {
         stage('Deploy with Ansible') {
             steps {
                  sshagent(['private-key']) {
-                  sh "ssh ubuntu@65.0.104.111 ansible-playbook -i inventory playbook.yml"
+                 
+                  sh "ssh -o StrictHostKeyChecking=no ubuntu@65.0.104.111 ansible-playbook -i inventory playbook.yml"   
 
       
                  }            

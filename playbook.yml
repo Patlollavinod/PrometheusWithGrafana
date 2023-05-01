@@ -1,12 +1,12 @@
 ---
-- hosts: alertmanger
+- hosts: alertmanager
   become: yes
   become_user: root
   become_method: sudo
   roles:
     - alertmanager
 
-- hosts: node-exporter
+- hosts: node_exporter
   become: yes
   become_user: root
   become_method: sudo

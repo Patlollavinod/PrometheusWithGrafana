@@ -9,7 +9,7 @@ pipeline {
         stage('Deploy with Ansible') {
             steps {
                  sh "ls"
-                 sh "ansible-playbook -i ineventory playbook.yml"
+                 sh "ansible-playbook -i ineventory.yml playbook.yml"
 
       
                  }            

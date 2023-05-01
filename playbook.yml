@@ -1,26 +1,26 @@
 ---
-- hosts: all
+- hosts: alertmanger
   become: yes
   become_user: root
   become_method: sudo
   roles:
     - alertmanager
 
-- hosts: all
+- hosts: node-exporter
   become: yes
   become_user: root
   become_method: sudo
   roles:
     - prometheus_node_exporter
 
-- hosts: all
+- hosts: prometheus
   become: yes
   become_user: root
   become_method: sudo
   roles:
     - prometheus
 
-- hosts: all
+- hosts: grafana
   become: yes
   become_user: root
   become_method: sudo
